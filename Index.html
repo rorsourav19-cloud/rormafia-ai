@@ -1,0 +1,135 @@
+shadowprompt-ai<!DOCTYPE html>
+<⁸
+      <!DOCTYPE html>
+<html>
+<head>
+  <title>ROR Mafia AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      color: #ff2e2e;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px red;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+    }
+
+    button {
+      width: 48%;
+      padding: 12px;
+      margin: 10px 1%;
+      border-radius: 12px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .generate {
+      background: #ff2e2e;
+      color: white;
+      box-shadow: 0 0 15px red;
+    }
+
+    .copy {
+      background: #222;
+      color: white;
+      border: 1px solid red;
+    }
+
+    #output {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.6);
+      min-height: 70px;
+      font-size: 14px;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>ROR Mafia AI 🔥</h1>
+
+  <input type="text" id="character" placeholder="Character Name">
+  <input type="text" id="mood" placeholder="Mood (Dark, Rage, Sad)">
+
+  <select id="editType">
+    <option value="AMV Edit">AMV Edit</option>
+    <option value="Montage">Montage</option>
+    <option value="Cinematic">Cinematic</option>
+    <option value="Glitch">Glitch</option>
+  </select>
+
+  <div>
+    <button class="generate" onclick="generatePrompt()">Generate</button>
+    <button class="copy" onclick="copyPrompt()">Copy</button>
+  </div>
+
+  <div id="output"></div>
+</div>
+
+<script>
+function generatePrompt() {
+  let character = document.getElementById("character").value;
+  let mood = document.getElementById("mood").value;
+  let editType = document.getElementById("editType").value;
+
+  if(character === "" || mood === "") {
+    alert("Fill all fields ⚠️");
+    return;
+  }
+
+  let prompt = `${editType} of ${character} in ultra ${mood} vibe, intense dramatic lighting, fast beat sync transitions, smooth slow motion, high contrast color grading, 4K resolution, 9:16 Instagram reel format, powerful anime aura effect`;
+
+  document.getElementById("output").innerText = prompt;
+}
+
+function copyPrompt() {
+  let text = document.getElementById("output").innerText;
+
+  if(text === "") {
+    alert("Generate first ⚠️");
+    return;
+  }
+
+  navigator.clipboard.writeText(text);
+  alert("Copied 🔥");
+}
+</script>
+
+</body>
+</html>
